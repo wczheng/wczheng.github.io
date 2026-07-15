@@ -49,7 +49,7 @@ export default function Profile({ author, social, features, researchInterests }:
     useEffect(() => {
         if (!features.enable_likes) return;
 
-        const userHasLiked = localStorage.getItem('jiale-website-user-liked');
+        const userHasLiked = localStorage.getItem('weicheng-website-user-liked');
         if (userHasLiked === 'true') {
             setHasLiked(true);
         }
@@ -60,11 +60,11 @@ export default function Profile({ author, social, features, researchInterests }:
         setHasLiked(newLikedState);
 
         if (newLikedState) {
-            localStorage.setItem('jiale-website-user-liked', 'true');
+            localStorage.setItem('weicheng-website-user-liked', 'true');
             setShowThanks(true);
             setTimeout(() => setShowThanks(false), 2000);
         } else {
-            localStorage.removeItem('jiale-website-user-liked');
+            localStorage.removeItem('weicheng-website-user-liked');
             setShowThanks(false);
         }
     };
@@ -118,7 +118,7 @@ export default function Profile({ author, social, features, researchInterests }:
                     alt={author.name}
                     width={256}
                     height={256}
-                    className="w-full h-full object-cover object-[32%_center]"
+                    className="w-full h-full object-cover object-[50%_38%]"
                     priority
                 />
             </div>
@@ -305,7 +305,7 @@ export default function Profile({ author, social, features, researchInterests }:
 
             {/* Research Interests */}
             {researchInterests && researchInterests.length > 0 && (
-                <div className="bg-neutral-100 dark:bg-neutral-800 rounded-lg p-4 mb-6 hover:shadow-lg transition-all duration-200 hover:scale-[1.02]">
+            <div className="bg-neutral-100 dark:bg-neutral-800 rounded-lg p-4 mb-6">
                     <h3 className="font-semibold text-primary mb-3">{messages.profile.researchInterests}</h3>
                     <div className="space-y-2 text-sm text-neutral-700 dark:text-neutral-500">
                         {researchInterests.map((interest, index) => (

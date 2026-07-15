@@ -1,9 +1,8 @@
 type = "card"
-title = "Services"
-description = "Professional services and community involvement."
+title = "Academic Service"
+description = "Peer-review service for the research community."
 
 [[items]]
-title = "Reviewer"
-subtitle = "Journal Name"
-date = "2024"
-content = "Reviewed papers for..."
+title = "Conference Reviewer"
+subtitle = "CVPR · CoRL · ICME"
+content = "Reviewed research submissions in computer vision, robot learning, and multimedia."

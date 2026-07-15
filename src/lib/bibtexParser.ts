@@ -89,11 +89,12 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
       code: tags.code,
       abstract: cleanBibTeXString(tags.abstract),
       description: cleanBibTeXString(tags.description || tags.note),
+      displayOrder: tags.display_order ? parseInt(tags.display_order, 10) : undefined,
       selected,
       preview,
 
       // Store original BibTeX (excluding custom fields)
-      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code']),
+      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code', 'display_order']),
     };
 
     // Clean up undefined fields
@@ -105,6 +106,10 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
 
     return publication;
   }).sort((a: Publication, b: Publication) => {
+    const orderA = a.displayOrder ?? Number.MAX_SAFE_INTEGER;
+    const orderB = b.displayOrder ?? Number.MAX_SAFE_INTEGER;
+    if (orderA !== orderB) return orderA - orderB;
+
     // Sort by year (descending), then by month if available
     if (b.year !== a.year) return b.year - a.year;
 
