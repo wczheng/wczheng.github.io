@@ -1,12 +1,12 @@
 [site]
 title = "Weicheng Zheng"
-description = "Personal academic website of Weicheng Zheng, an incoming PhD student at Tsinghua University working on autonomous driving, embodied intelligence, and multimodal large language models."
+description = "Personal academic website of Weicheng Zheng, an IIIS PhD student at Tsinghua University working on autonomous driving, embodied intelligence, and multimodal large language models."
 favicon = "/favicon.svg"
 last_updated = "July 16, 2026"
 
 [author]
 name = "Weicheng Zheng"
-title = "Incoming PhD Student"
+title = "IIIS PhD Student"
 institution = "Tsinghua University"
 avatar = "/profile_picture.jpg"
 
@@ -16,6 +16,7 @@ location = "Beijing, China"
 location_details = ["Beijing, China"]
 orcid = "https://orcid.org/0009-0004-1570-1544"
 github = "https://github.com/wczheng"
+google_scholar = "https://scholar.google.com/citations?hl=zh-CN&user=KO2wnUUAAAAJ"
 
 [features]
 enable_likes = true
